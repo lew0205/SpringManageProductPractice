@@ -1,10 +1,7 @@
 package com.mp.manage.product.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Member {
@@ -12,7 +9,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+@Column(nullable = false)
     private String name;
 
     private String address;
