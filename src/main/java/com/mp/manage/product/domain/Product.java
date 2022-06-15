@@ -12,6 +12,8 @@ public class Product {
     @Column(nullable = false)
     private Long price;
 
+    private Long productCnt;
+
     public Long getId() {
         return id;
     }
@@ -34,5 +36,13 @@ public class Product {
 
     public void setPrice(Long price) {
         this.price = price;
+    }
+
+    public Long getProductCnt() {
+        return productCnt;
+    }
+
+    public void setProductCnt(Long productCnt) {
+        this.productCnt = productCnt;
     }
 }
