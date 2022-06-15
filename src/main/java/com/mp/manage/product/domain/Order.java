@@ -9,11 +9,11 @@ public class Order {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "m_id",nullable = false)
+    @JoinColumn(name = "m_id", nullable = false)
     private Member member;
 
     @ManyToOne
-    @JoinColumn(name = "p_id",nullable = false)
+    @JoinColumn(name = "p_id", nullable = false)
     private Product product;
 
     @Column(nullable = false)
