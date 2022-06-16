@@ -1,7 +1,8 @@
-package com.mp.manage.product.Service;
+package com.mp.manage.product.service;
 
-import com.mp.manage.product.Repository.ProductRepository;
-import com.mp.manage.product.domain.Product;
+import com.mp.manage.product.repository.ProductRepository;
+import com.mp.manage.product.domain.product.Product;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -9,12 +10,9 @@ import java.util.List;
 
 @Transactional
 @Service
+@RequiredArgsConstructor
 public class ProductService {
-    private ProductRepository productRepository;
-
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
+    private final ProductRepository productRepository;
 
     public Long joinProduct(Product product) {
         productRepository.save(product);

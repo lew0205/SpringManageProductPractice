@@ -1,28 +1,10 @@
-package com.mp.manage.product.domain;
+package com.mp.manage.product.domain.member;
 
+public class MemberForm {
 
-import javax.persistence.*;
-
-@Entity
-public class Member {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-@Column(nullable = false)
-    private String name;
-
-    private String address;
-
-    private String phoneNum;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    String name;
+    String address;
+    String phoneNum;
 
     public String getName() {
         return name;

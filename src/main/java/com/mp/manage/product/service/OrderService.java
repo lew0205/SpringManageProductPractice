@@ -1,11 +1,10 @@
-package com.mp.manage.product.Service;
+package com.mp.manage.product.service;
 
-import com.mp.manage.product.Repository.MemberRepository;
-import com.mp.manage.product.Repository.OrderRepository;
-import com.mp.manage.product.Repository.ProductRepository;
-import com.mp.manage.product.domain.Member;
-import com.mp.manage.product.domain.Order;
-import org.aspectj.weaver.ast.Or;
+import com.mp.manage.product.repository.MemberRepository;
+import com.mp.manage.product.repository.OrderRepository;
+import com.mp.manage.product.repository.ProductRepository;
+import com.mp.manage.product.domain.order.Order;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -13,14 +12,11 @@ import java.util.List;
 
 @Transactional
 @Service
+@RequiredArgsConstructor
 public class OrderService {
-    private OrderRepository orderRepository;
-    private MemberRepository memberRepository;
-    private ProductRepository productRepository;
-
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
+    private final OrderRepository orderRepository;
+    private final MemberRepository memberRepository;
+    private final ProductRepository productRepository;
 
     public Long joinOrder(Order order) {
         orderRepository.save(order);

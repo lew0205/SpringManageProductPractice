@@ -1,7 +1,8 @@
-package com.mp.manage.product.Service;
+package com.mp.manage.product.service;
 
-import com.mp.manage.product.Repository.MemberRepository;
-import com.mp.manage.product.domain.Member;
+import com.mp.manage.product.repository.MemberRepository;
+import com.mp.manage.product.domain.member.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -9,12 +10,9 @@ import java.util.List;
 
 @Transactional
 @Service
+@RequiredArgsConstructor
 public class MemberService {
-    private MemberRepository memberRepository;
-
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+    private final MemberRepository memberRepository;
 
     public Long joinMember(Member member) {
         memberRepository.save(member);
