@@ -19,6 +19,10 @@ public class ProductService {
         return product.getId();
     }
 
+    public List<Product> findProducts(){
+        return productRepository.findAll();
+    }
+
     public Product findById(Long id) {
         return productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException());
