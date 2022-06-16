@@ -1,14 +1,16 @@
 package com.mp.manage.product.domain.member;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@Builder
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Member {
 
     @Id

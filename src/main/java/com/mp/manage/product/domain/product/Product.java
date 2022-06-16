@@ -1,13 +1,15 @@
 package com.mp.manage.product.domain.product;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,4 @@ public class Product {
     private String name;
     @Column(nullable = false)
     private Long price;
-
-    private Long productCnt;
 }
