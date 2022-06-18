@@ -4,10 +4,8 @@ import com.mp.manage.product.domain.product.Product;
 import com.mp.manage.product.domain.dto.ProductDto;
 import com.mp.manage.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,14 +14,21 @@ import java.util.List;
 public class ProductController {
     private final ProductService productService;
 
-    @GetMapping("product/list")
+    @GetMapping("product")
     public List<Product> productList(){
         List<Product> products = productService.findProducts();
         return products;
     }
 
-    @PostMapping("/product")
-    public void productJoin(@RequestBody ProductDto productDto){
+    @GetMapping("product/{name}")
+    public Product findProductName(@PathVariable String name){
+        Product product = productService.findByName(name);
+        return product;
+    }
 
+    @PostMapping("/product/join")
+    public ResponseEntity productJoin(@RequestBody ProductDto productDto){
+        productService.join(productDto.toEntity());
+        return ResponseEntity.ok().build();
     }
 }
