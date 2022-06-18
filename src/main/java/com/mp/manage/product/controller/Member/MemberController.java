@@ -23,6 +23,12 @@ public class MemberController {
         return members;
     }
 
+    @GetMapping("/member/{id}")
+    public Member findMemberId(@PathVariable Long id){
+        Member member=memberService.findById(id);
+        return member;
+    }
+
     @PostMapping("/member/join")
     public ResponseEntity memberJoin(@RequestBody MemberDto memberDto) {
         memberService.join(memberDto.toEntity());
