@@ -14,7 +14,7 @@ import java.util.List;
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    public Long joinMember(Member member) {
+    public Long join(Member member) {
         memberRepository.save(member);
         return member.getId();
     }
