@@ -1,5 +1,6 @@
 package com.mp.manage.product.service;
 
+import com.mp.manage.product.domain.dto.MemberDto;
 import com.mp.manage.product.repository.MemberRepository;
 import com.mp.manage.product.domain.member.Member;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,8 @@ import java.util.List;
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    public Long join(Member member) {
+    public Long join(MemberDto memberDto) {
+        Member member = memberDto.toEntity();
         memberRepository.save(member);
         return member.getId();
     }

@@ -1,5 +1,6 @@
 package com.mp.manage.product.service;
 
+import com.mp.manage.product.domain.dto.ProductDto;
 import com.mp.manage.product.repository.ProductRepository;
 import com.mp.manage.product.domain.product.Product;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,8 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public Long join(Product product) {
+    public Long join(ProductDto productDto) {
+        Product product = productDto.toEntity();
         productRepository.save(product);
         return product.getId();
     }

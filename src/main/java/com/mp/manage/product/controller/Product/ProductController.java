@@ -28,7 +28,7 @@ public class ProductController {
 
     @PostMapping("/product/join")
     public ResponseEntity productJoin(@RequestBody ProductDto productDto){
-        productService.join(productDto.toEntity());
+        productService.join(productDto);
         return ResponseEntity.ok().build();
     }
 }

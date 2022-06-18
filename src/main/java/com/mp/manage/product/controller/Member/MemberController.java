@@ -1,12 +1,10 @@
 package com.mp.manage.product.controller.Member;
 
-import com.mp.manage.product.domain.dto.ProductDto;
 import com.mp.manage.product.domain.member.Member;
 import com.mp.manage.product.domain.dto.MemberDto;
 import com.mp.manage.product.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,14 +22,14 @@ public class MemberController {
     }
 
     @GetMapping("/member/{id}")
-    public Member findMemberId(@PathVariable Long id){
-        Member member=memberService.findById(id);
+    public Member findMemberId(@PathVariable Long id) {
+        Member member = memberService.findById(id);
         return member;
     }
 
     @PostMapping("/member/join")
     public ResponseEntity memberJoin(@RequestBody MemberDto memberDto) {
-        memberService.join(memberDto.toEntity());
+        memberService.join(memberDto);
         return ResponseEntity.ok().build();
     }
 }
