@@ -1,5 +1,6 @@
 package com.mp.manage.product.service;
 
+import com.mp.manage.product.domain.dto.OrderDto;
 import com.mp.manage.product.repository.MemberRepository;
 import com.mp.manage.product.repository.OrderRepository;
 import com.mp.manage.product.repository.ProductRepository;
@@ -18,7 +19,8 @@ public class OrderService {
     private final MemberRepository memberRepository;
     private final ProductRepository productRepository;
 
-    public Long joinOrder(Order order) {
+    public Long join(OrderDto orderDto) {
+        Order order = orderDto.toEntity();
         orderRepository.save(order);
         return order.getId();
     }
