@@ -26,4 +26,16 @@ public class OrderController {
         List<Order> orders = orderService.findOrders();
         return orders;
     }
+
+    @GetMapping("order/member/{id}")
+    public List<Order> findMemberOrderList(@PathVariable Long id){
+        List<Order> orders = orderService.findByMemberId(id);
+        return orders;
+    }
+
+    @GetMapping("order/product/{id}")
+    public List<Order> findProductOrderList(@PathVariable Long id){
+        List<Order> orders = orderService.findByProductId(id);
+        return orders;
+    }
 }
