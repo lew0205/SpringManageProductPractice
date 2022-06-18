@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public Long joinProduct(Product product) {
+    public Long join(Product product) {
         productRepository.save(product);
         return product.getId();
     }
@@ -28,7 +28,7 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException());
     }
 
-    public List<Product> findByName(String name) {
-        return productRepository.findAllByName(name);
+    public Product findByName(String name) {
+        return productRepository.findByName(name);
     }
 }
