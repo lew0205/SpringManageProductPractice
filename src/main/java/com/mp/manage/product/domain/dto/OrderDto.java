@@ -7,15 +7,15 @@ import lombok.Getter;
 
 @Getter
 public class OrderDto {
-    private Member member;
-    private Product product;
+    private Long member;
+    private Long product;
     private Long productCnt;
 
 
-    public Order toEntity() {
+    public Order toEntity(Member member,Product product) {
         return Order.builder()
-                .member(this.member)
-                .product(this.product)
+                .member(member)
+                .product(product)
                 .productCnt(this.productCnt)
                 .build();
     }
