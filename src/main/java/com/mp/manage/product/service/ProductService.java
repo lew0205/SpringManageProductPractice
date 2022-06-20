@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -17,6 +18,7 @@ public class ProductService {
 
     public Long join(ProductDto productDto) {
         Product product = productDto.toEntity();
+        chkDuplicateName(product);
         productRepository.save(product);
         return product.getId();
     }
@@ -30,7 +32,13 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException());
     }
 
-    public Product findByName(String name) {
+    public Optional<Product> findByName(String name) {
         return productRepository.findByName(name);
+    }
+
+    public void chkDuplicateName(Product product) {
+        productRepository.findByName(product.getName()).ifPresent(n -> {
+            throw new IllegalStateException("이미 존재하는 상품입니다.");
+        });
     }
 }

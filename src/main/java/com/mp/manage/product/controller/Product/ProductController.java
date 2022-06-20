@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,8 +22,8 @@ public class ProductController {
     }
 
     @GetMapping("product/{name}")
-    public Product findProductName(@PathVariable String name){
-        Product product = productService.findByName(name);
+    public Optional<Product> findProductName(@PathVariable String name){
+        Optional<Product> product = productService.findByName(name);
         return product;
     }
 
