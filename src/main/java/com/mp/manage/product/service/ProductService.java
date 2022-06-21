@@ -19,8 +19,7 @@ public class ProductService {
     public Long join(ProductDto productDto) {
         Product product = productDto.toEntity();
         chkDuplicateName(product);
-        productRepository.save(product);
-        return product.getId();
+        return productRepository.save(product).getId();
     }
 
     public List<Product> findProducts(){
@@ -32,8 +31,9 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException());
     }
 
-    public Optional<Product> findByName(String name) {
-        return productRepository.findByName(name);
+    public Product findByName(String name) {
+        return productRepository.findByName(name)
+                .orElseThrow(()->new RuntimeException());
     }
 
     public void chkDuplicateName(Product product) {

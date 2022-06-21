@@ -23,8 +23,8 @@ public class ProductController {
     }
 
     @GetMapping("/{name}")
-    public Optional<Product> findProductName(@PathVariable String name){
-        Optional<Product> product = productService.findByName(name);
+    public Product findProductName(@PathVariable String name){
+        Product product = productService.findByName(name);
         return product;
     }
 

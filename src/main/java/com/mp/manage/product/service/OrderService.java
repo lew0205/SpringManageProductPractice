@@ -27,8 +27,7 @@ public class OrderService {
         Product product = productRepository.findById(orderDto.getProduct())
                 .orElseThrow(() -> new RuntimeException());
         Order order = orderDto.toEntity(member, product);
-        orderRepository.save(order);
-        return order.getId();
+        return orderRepository.save(order).getId();
     }
 
     public List<Order> findOrders() {

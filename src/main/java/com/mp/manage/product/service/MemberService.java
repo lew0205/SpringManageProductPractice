@@ -17,8 +17,7 @@ public class MemberService {
 
     public Long join(MemberDto memberDto) {
         Member member = memberDto.toEntity();
-        memberRepository.save(member);
-        return member.getId();
+        return memberRepository.save(member).getId();
     }
 
     public List<Member> findMembers() {
