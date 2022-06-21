@@ -35,8 +35,8 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order findOrder(Long id){
-        return orderRepository.findById(id).orElseThrow(()->new RuntimeException());
+    public Order findOrder(Long id) {
+        return orderRepository.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
     public List<Order> findByMemberId(Long id) {

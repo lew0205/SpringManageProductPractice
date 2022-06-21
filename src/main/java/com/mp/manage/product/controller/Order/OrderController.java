@@ -12,34 +12,35 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/order")
 public class OrderController {
     private final OrderService orderService;
 
-    @PostMapping("order/join")
+    @PostMapping("/join")
     public ResponseEntity joinOrder(@RequestBody OrderDto orderDto) {
         orderService.join(orderDto);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("order")
+    @GetMapping
     public List<Order> orderList() {
         List<Order> orders = orderService.findOrders();
         return orders;
     }
 
-    @GetMapping("order/{id}")
+    @GetMapping("/{id}")
     public Order findOrder(@PathVariable Long id) {
         Order order = orderService.findOrder(id);
         return order;
     }
 
-    @GetMapping("order/member/{id}")
+    @GetMapping("/member/{id}")
     public List<Order> findMemberOrderList(@PathVariable Long id) {
         List<Order> orders = orderService.findByMemberId(id);
         return orders;
     }
 
-    @GetMapping("order/product/{id}")
+    @GetMapping("/product/{id}")
     public List<Order> findProductOrderList(@PathVariable Long id) {
         List<Order> orders = orderService.findByProductId(id);
         return orders;

@@ -12,22 +12,23 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/product")
 public class ProductController {
     private final ProductService productService;
 
-    @GetMapping("product")
+    @GetMapping
     public List<Product> productList(){
         List<Product> products = productService.findProducts();
         return products;
     }
 
-    @GetMapping("product/{name}")
+    @GetMapping("/{name}")
     public Optional<Product> findProductName(@PathVariable String name){
         Optional<Product> product = productService.findByName(name);
         return product;
     }
 
-    @PostMapping("/product/join")
+    @PostMapping("/join")
     public ResponseEntity productJoin(@RequestBody ProductDto productDto){
         productService.join(productDto);
         return ResponseEntity.ok().build();
