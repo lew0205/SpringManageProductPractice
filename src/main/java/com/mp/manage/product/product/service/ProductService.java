@@ -1,14 +1,13 @@
-package com.mp.manage.product.service;
+package com.mp.manage.product.product.service;
 
-import com.mp.manage.product.domain.dto.ProductDto;
-import com.mp.manage.product.repository.ProductRepository;
-import com.mp.manage.product.domain.product.Product;
+import com.mp.manage.product.product.dto.ProductDto;
+import com.mp.manage.product.product.repository.ProductRepository;
+import com.mp.manage.product.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @Transactional
 @Service

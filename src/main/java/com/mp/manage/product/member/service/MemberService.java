@@ -1,8 +1,8 @@
-package com.mp.manage.product.service;
+package com.mp.manage.product.member.service;
 
-import com.mp.manage.product.domain.dto.MemberDto;
-import com.mp.manage.product.repository.MemberRepository;
-import com.mp.manage.product.domain.member.Member;
+import com.mp.manage.product.member.dto.MemberDto;
+import com.mp.manage.product.member.repository.MemberRepository;
+import com.mp.manage.product.member.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

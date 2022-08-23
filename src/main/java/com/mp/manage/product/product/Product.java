@@ -1,4 +1,4 @@
-package com.mp.manage.product.domain.product;
+package com.mp.manage.product.product;
 
 import lombok.*;
 

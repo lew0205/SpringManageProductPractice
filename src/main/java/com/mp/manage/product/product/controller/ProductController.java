@@ -1,14 +1,13 @@
-package com.mp.manage.product.controller.Product;
+package com.mp.manage.product.product.controller;
 
-import com.mp.manage.product.domain.product.Product;
-import com.mp.manage.product.domain.dto.ProductDto;
-import com.mp.manage.product.service.ProductService;
+import com.mp.manage.product.product.Product;
+import com.mp.manage.product.product.dto.ProductDto;
+import com.mp.manage.product.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor

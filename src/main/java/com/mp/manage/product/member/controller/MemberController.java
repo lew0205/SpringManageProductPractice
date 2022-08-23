@@ -1,8 +1,8 @@
-package com.mp.manage.product.controller.Member;
+package com.mp.manage.product.member.controller;
 
-import com.mp.manage.product.domain.member.Member;
-import com.mp.manage.product.domain.dto.MemberDto;
-import com.mp.manage.product.service.MemberService;
+import com.mp.manage.product.member.Member;
+import com.mp.manage.product.member.dto.MemberDto;
+import com.mp.manage.product.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

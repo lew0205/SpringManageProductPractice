@@ -1,10 +1,9 @@
-package com.mp.manage.product.controller.Order;
+package com.mp.manage.product.order.controller;
 
-import com.mp.manage.product.domain.dto.OrderDto;
-import com.mp.manage.product.domain.order.Order;
-import com.mp.manage.product.service.OrderService;
+import com.mp.manage.product.order.dto.OrderDto;
+import com.mp.manage.product.order.Order;
+import com.mp.manage.product.order.service.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

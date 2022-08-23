@@ -1,6 +1,6 @@
-package com.mp.manage.product.domain.dto;
+package com.mp.manage.product.member.dto;
 
-import com.mp.manage.product.domain.member.Member;
+import com.mp.manage.product.member.Member;
 import lombok.Getter;
 
 @Getter

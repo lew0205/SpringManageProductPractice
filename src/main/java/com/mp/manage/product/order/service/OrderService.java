@@ -1,12 +1,12 @@
-package com.mp.manage.product.service;
+package com.mp.manage.product.order.service;
 
-import com.mp.manage.product.domain.dto.OrderDto;
-import com.mp.manage.product.domain.member.Member;
-import com.mp.manage.product.domain.product.Product;
-import com.mp.manage.product.repository.MemberRepository;
-import com.mp.manage.product.repository.OrderRepository;
-import com.mp.manage.product.repository.ProductRepository;
-import com.mp.manage.product.domain.order.Order;
+import com.mp.manage.product.order.dto.OrderDto;
+import com.mp.manage.product.member.Member;
+import com.mp.manage.product.product.Product;
+import com.mp.manage.product.member.repository.MemberRepository;
+import com.mp.manage.product.order.repository.OrderRepository;
+import com.mp.manage.product.product.repository.ProductRepository;
+import com.mp.manage.product.order.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.mp.manage.product.repository;
+package com.mp.manage.product.order.repository;
 
-import com.mp.manage.product.domain.order.Order;
+import com.mp.manage.product.order.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

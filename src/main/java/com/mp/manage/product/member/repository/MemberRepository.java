@@ -1,6 +1,6 @@
-package com.mp.manage.product.repository;
+package com.mp.manage.product.member.repository;
 
-import com.mp.manage.product.domain.member.Member;
+import com.mp.manage.product.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.mp.manage.product.domain.order;
+package com.mp.manage.product.order;
 
-import com.mp.manage.product.domain.product.Product;
-import com.mp.manage.product.domain.member.Member;
+import com.mp.manage.product.product.Product;
+import com.mp.manage.product.member.Member;
 import lombok.*;
 
 import javax.persistence.*;

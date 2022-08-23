@@ -1,9 +1,7 @@
-package com.mp.manage.product.domain.dto;
+package com.mp.manage.product.product.dto;
 
-import com.mp.manage.product.domain.product.Product;
+import com.mp.manage.product.product.Product;
 import lombok.Getter;
-
-import javax.persistence.Column;
 
 @Getter
 public class ProductDto {
